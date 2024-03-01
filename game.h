@@ -1,8 +1,12 @@
 #pragma once
 
+#include "template.h"
+
 namespace Tmpl8 {
 
-class Surface;
+	class Surface;
+	class Sprite;
+
 class Game
 {
 public:
@@ -16,7 +20,12 @@ public:
 	void KeyUp( int key ) { /* implement if you want to handle keys */ }
 	void KeyDown( int key ) { /* implement if you want to handle keys */ }
 private:
-	Surface* screen;
+	Surface* screen = nullptr;
+	Sprite* ball = nullptr;
+	vec2 ballPos{ 100, 0 };
+	vec2 ballVel{ 100, 0 };
+	static const vec2 GRAVITY;
+	static const vec2 BALL_RADIUS;
 };
 
 }; // namespace Tmpl8
